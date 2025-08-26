@@ -1,0 +1,420 @@
+<!-- ORDER (Current) -->
+<section id="order">…  
+  <form id="complianceForm">  
+    <label><input type="checkbox" id="ack1"> I confirm these products are for … research use only …</label>  
+    <label><input type="checkbox" id="ack2"> I understand cold-pack shipping and proper storage are required.</label>  
+  </form>  
+  <div class="mt-6">  
+    <a id="orderBtn" href="https://forms.gle/XYZ..." target="_blank" … class="pointer-events-none opacity-60 …">Open Order Form</a>  
+    <p class="text-xs text-zinc-400 mt-2">The button unlocks after both boxes are checked.</p>  
+  </div>  
+</section>
+<!-- ORDER (Updated) -->
+<section id="order" class="max-w-6xl mx-auto px-4 py-16">
+  <h2 class="serif text-3xl mb-4">Place an Order</h2>
+  <p class="text-sm text-zinc-300">Please confirm before proceeding:</p>
+  
+  <!-- Compliance checkboxes -->
+  <form id="complianceForm" class="mt-4 space-y-2 text-sm">
+    <label class="flex items-start gap-2">
+      <input type="checkbox" id="ack1" class="mt-1">
+      I confirm these products are for <span class="font-semibold text-white">laboratory research use only</span> and <span class="font-semibold text-white">not for human or veterinary consumption</span>.
+    </label>
+    <label class="flex items-start gap-2">
+      <input type="checkbox" id="ack2" class="mt-1">
+      I understand cold-pack shipping and proper storage are required.
+    </label>
+  </form>
+
+  <!-- Begin actual order form (initially disabled/hidden until compliance is checked) -->
+  <form id="orderForm" name="order" method="POST" data-netlify="true" class="mt-6 opacity-50 pointer-events-none">
+    <!-- Netlify honeypot and form-name (Netlify injects form-name automatically when deploying) -->
+    <input type="hidden" name="form-name" value="order" />
+    <p class="text-zinc-300 text-sm mb-4">
+      Please fill out your contact information and select the products you wish to order.
+    </p>
+    <!-- Contact Info -->
+    <div class="grid md:grid-cols-2 gap-4 text-sm">
+      <label class="flex flex-col">
+        <span class="mb-1 font-medium text-zinc-200">Full Name</span>
+        <input type="text" name="name" required class="rounded-md bg-zinc-800 border border-zinc-700 p-2" />
+      </label>
+      <label class="flex flex-col">
+        <span class="mb-1 font-medium text-zinc-200">Email Address</span>
+        <input type="email" name="email" required class="rounded-md bg-zinc-800 border border-zinc-700 p-2" />
+      </label>
+      <!-- (Optional) Additional contact fields like phone or address can go here -->
+    </div>
+    <!-- Starter Packs Section -->
+    <h3 class="text-xl font-semibold mt-8 mb-3 serif">🔥 Prime Starter Packs – 3 Month Protocols</h3>
+    <p class="text-xs text-zinc-400 mb-2">Choose one option (Lipo-B or Super Human Blend) for each pack you want to order:</p>
+
+    <!-- Weight Loss Edition Pack -->
+    <details class="bg-white/5 rounded-xl p-4 mb-3">
+      <summary class="cursor-pointer font-medium text-zinc-200">
+        💊 Prime Starter Pack – <strong>Weight Loss Edition</strong> (3-month) – 
+        <span class="text-blush-300">$212</span>/<span class="text-blush-300">$227</span>
+        <small class="text-zinc-400 font-normal">(Lipo-B vs Super Human Blend)</small>
+        <!-- Radio inputs for this pack -->
+        <div class="mt-2 ml-4 text-sm text-zinc-300">
+          <label class="mr-4"><input type="radio" name="WeightLossPack" value="Weight Loss Pack (Lipo-B) $212"> Lipo-B version ($212)</label>
+          <label><input type="radio" name="WeightLossPack" value="Weight Loss Pack (Super Human) $227"> Super Human Blend ($227)</label>
+        </div>
+      </summary>
+      <div class="mt-4 text-sm text-zinc-300 leading-relaxed">
+        <!-- Pack contents and descriptions -->
+        💉 <strong>Core Fat-Loss Driver:</strong> Tirzepatide (30&nbsp;mg vial, also available as pre-filled pen) <br>
+        🔑 Supports appetite control, blood sugar regulation, and powerful weight loss results.<br><br>
+
+        ⚡ <strong>Fat-Burning Support:</strong> AOD-9604 (5&nbsp;mg vial) <br>
+        🔥 A modified fragment of HGH specifically to target stubborn fat and enhance metabolism.<br><br>
+
+        💎 <strong>Repair & Wellness:</strong> Glow Blend (BPC-157 + TB500 + GHK-Cu) <br>
+        ✨ Helps reduce inflammation, promote recovery, and supports healthier joints/skin during the weight loss journey.<br><br>
+
+        🚀 <strong>Energy & Stamina:</strong> Lipo-B (10&nbsp;mL vial) <em>or</em> <strong>Super Human Blend (10&nbsp;mL vial)</strong> <br>
+        💥 Both options provide energy, metabolism, and fat-burning support via amino acids, B-vitamins, and lipotropic agents.<br>
+        <span class="ml-6 text-zinc-400 text-xs">
+          – <u>Lipo-B ingredients per mL:</u> L-Carnitine 20&nbsp;mg, L-Arginine 20&nbsp;mg, Methionine 25&nbsp;mg, Inositol 50&nbsp;mg, Choline 50&nbsp;mg, B6 25&nbsp;mg, B5 25&nbsp;mg, B12 1&nbsp;mg.
+        </span><br>
+        <span class="ml-6 text-zinc-400 text-xs">
+          – <u>Super Human Blend ingredients:</u> L-Arginine 110&nbsp;mg, L-Ornithine 110&nbsp;mg, L-Citrulline 120&nbsp;mg, L-Lysine 70&nbsp;mg, L-Glutamine 40&nbsp;mg, L-Proline 60&nbsp;mg, L-Taurine 60&nbsp;mg, L-Carnitine 220&nbsp;mg, NAC 75&nbsp;mg.
+        </span><br><br>
+
+        🛡 <strong>Immune Support:</strong> Thymosin Alpha-1 (10&nbsp;mg vial) <br>
+        🛡 A peptide known for immune-modulating and antiviral properties, supporting immune defense and balanced inflammation.<br><br>
+
+        ✅ <strong>Why It Works</strong>:<br>
+        <ul class="list-disc list-inside pl-4">
+          <li>Covers appetite suppression, fat metabolism, recovery, and energy in one pack.</li>
+          <li>Ideal kick-start for a fat-loss journey with fast, noticeable results.</li>
+          <li>Stacks easily with training & nutrition changes for maximum impact.</li>
+        </ul>
+        <p class="mt-2 text-zinc-400 text-xs italic">
+          This isn’t just another weight loss bundle — it’s a science-backed protocol designed to cut cravings, burn fat, and keep your body running strong.
+        </p>
+      </div>
+    </details>
+
+    <!-- Gym Performance Edition Pack -->
+    <details class="bg-white/5 rounded-xl p-4 mb-3">
+      <summary class="cursor-pointer font-medium text-zinc-200">
+        🏋️ Prime Starter Pack – <strong>Gym Performance Edition</strong> (3-month) – 
+        <span class="text-blush-300">$212</span>/<span class="text-blush-300">$227</span>
+        <small class="text-zinc-400 font-normal">(Lipo-B vs Super Human Blend)</small>
+        <div class="mt-2 ml-4 text-sm text-zinc-300">
+          <label class="mr-4"><input type="radio" name="GymPack" value="Gym Pack (Lipo-B) $212"> Lipo-B version ($212)</label>
+          <label><input type="radio" name="GymPack" value="Gym Pack (Super Human) $227"> Super Human Blend ($227)</label>
+        </div>
+      </summary>
+      <div class="mt-4 text-sm text-zinc-300 leading-relaxed">
+        💉 <strong>Core Foundation:</strong> Testosterone Cypionate (250&nbsp;mg/mL, 10&nbsp;mL vial) <br>
+        🔑 Builds strength, muscle mass, energy, and performance — the base of any serious cycle.<br><br>
+
+        💎 <strong>Recovery & Repair:</strong> Glow Blend (BPC-157 + TB500 + GHK-Cu) <br>
+        ✨ Speeds recovery, reduces inflammation, and supports skin + joint health.<br><br>
+
+        ⚡ <strong>Energy & Cellular Health:</strong> NAD+ (500&nbsp;mg vial) – <em>includes 2 vials</em> <br>
+        🔋 Boosts mitochondrial energy, cellular repair, and overall vitality.<br><br>
+
+        🚀 <strong>Metabolic Support:</strong> Lipo-B (10&nbsp;mL vial) <em>or</em> <strong>Super Human Blend (10&nbsp;mL)</strong> <br>
+        💥 Provides amino acids and vitamins for metabolism, stamina, and performance. (Super Human Blend offers an all-in-one amino+recovery boost.)<br><br>
+
+        🛡 <strong>Immune Support:</strong> Thymosin Alpha-1 (10&nbsp;mg vial) <br>
+        🛡 Enhances immune defense and recovery, keeping you resilient during intense training phases.<br><br>
+
+        ✅ <strong>Why It Works</strong>:<br>
+        <ul class="list-disc list-inside pl-4">
+          <li>Covers muscle growth, recovery, and energy in one pack.</li>
+          <li>Great for those starting their first serious performance stack.</li>
+          <li>Includes health-focused peptides (NAD+, TA1) to balance out the hardcore muscle-building elements.</li>
+        </ul>
+        <p class="mt-2 text-zinc-400 text-xs italic">
+          *Note:* Approximately a 3-month supply (depending on dosage), not just a one-month cycle.
+        </p>
+      </div>
+    </details>
+
+    <!-- Lifestyle Health Edition Pack -->
+    <details class="bg-white/5 rounded-xl p-4 mb-3">
+      <summary class="cursor-pointer font-medium text-zinc-200">
+        🌟 Prime Starter Pack – <strong>Lifestyle Health Edition</strong> (3-month) – 
+        <span class="text-blush-300">$220</span>/<span class="text-blush-300">$235</span>
+        <small class="text-zinc-400 font-normal">(Lipo-B vs Super Human Blend)</small>
+        <div class="mt-2 ml-4 text-sm text-zinc-300">
+          <label class="mr-4"><input type="radio" name="LifestylePack" value="Lifestyle Pack (Lipo-B) $220"> Lipo-B version ($220)</label>
+          <label><input type="radio" name="LifestylePack" value="Lifestyle Pack (Super Human) $235"> Super Human Blend ($235)</label>
+        </div>
+      </summary>
+      <div class="mt-4 text-sm text-zinc-300 leading-relaxed">
+        ⚡ <strong>Energy & Vitality:</strong> NAD+ (500&nbsp;mg vial) <br>
+        🔋 Boosts cellular energy, sharpens focus, and supports long-term wellness.<br><br>
+
+        💎 <strong>Recovery & Longevity:</strong> Glow Blend (BPC-157 + TB500 + GHK-Cu) <br>
+        ✨ Speeds recovery, reduces inflammation, and supports healthy skin, hair, and joints.<br><br>
+
+        🛡 <strong>Immune Resilience:</strong> Thymosin Alpha-1 (10&nbsp;mg vial) <br>
+        🛡 Strengthens immune defense and helps the body adapt to stress (for prevention or during acute illness).<br><br>
+
+        🧠 <strong>Brain Health:</strong> Semax or Selank (5&nbsp;mg vial, intranasal or subq) <br>
+        🧠 Enhances focus, memory, and mood while reducing anxiety and stress. Great for busy professionals or students.<br><br>
+
+        🚀 <strong>Daily Wellness Boost:</strong> Lipo-B (10&nbsp;mL vial) <em>or</em> <strong>Super Human Blend (10&nbsp;mL)</strong> <br>
+        💥 Provides daily energy, metabolism, and fat-burning support with amino acids and B-vitamins (Super Human adds extra performance amino acids).<br><br>
+
+        ✅ <strong>Why It Works</strong>:<br>
+        <ul class="list-disc list-inside pl-4">
+          <li>Covers energy, recovery, immune health, and cognitive performance in one kit.</li>
+          <li>Helps you live sharper, stronger, with more daily energy.</li>
+        </ul>
+        <p class="mt-2 text-zinc-400 text-xs italic">
+          The Lifestyle Pack isn’t just about recovery — it’s about optimizing mind and body for everyday performance and wellness.
+        </p>
+      </div>
+    </details>
+    <!-- Starter Kits Section -->
+    <h3 class="text-xl font-semibold mt-8 mb-3 serif">💉 Starter Kits (Pre-Filled Pen Cartridges)</h3>
+
+    <!-- Glow Stack Starter Kit -->
+    <details class="bg-white/5 rounded-xl p-4 mb-3">
+      <summary class="cursor-pointer font-medium text-zinc-200 flex items-center justify-between">
+        <span>
+          ✨ <strong>Glow Stack Starter Kit</strong> – $110 
+          <small class="text-zinc-400 font-normal">(70mg blend in 3mL pre-filled pen)</small>
+        </span>
+        <label class="text-sm text-zinc-300"><input type="checkbox" name="GlowKit" value="Glow Stack Starter Kit $110"> Order</label>
+      </summary>
+      <div class="mt-3 text-sm text-zinc-300">
+        Includes a 70&nbsp;mg blend of BPC-157, TB-500, and GHK-Cu in a ready-to-use pen cartridge (3&nbsp;mL). This ultimate healing and rejuvenation stack supports faster recovery from workouts, injuries, and stress. It promotes healthy skin, hair, and collagen production — combining anti-inflammatory and anti-aging benefits in one powerful blend.
+        <br><br>
+        <em>Options:</em><br>
+        <label class="block ml-4">
+          <input type="checkbox" name="GlowKit_second" value="Add 2nd Glow cartridge $30"> Add a second 3mL cartridge for +$30 
+        </label>
+        <label class="block ml-4 mt-1">
+          Pen Color: 
+          <select name="GlowKit_color" class="bg-zinc-800 border border-zinc-700 rounded-md px-2 py-1">
+            <option value="Blue">🔵 Blue</option>
+            <option value="Pink">🎀 Pink</option>
+          </select>
+        </label>
+      </div>
+    </details>
+
+    <!-- Tirzepatide Starter Kit -->
+    <details class="bg-white/5 rounded-xl p-4 mb-3">
+      <summary class="cursor-pointer font-medium text-zinc-200 flex items-center justify-between">
+        <span>
+          🔥 <strong>Tirzepatide Starter Kit</strong> – $120 
+          <small class="text-zinc-400 font-normal">(30mg Tirzepatide in 3mL pen)</small>
+        </span>
+        <label class="text-sm text-zinc-300"><input type="checkbox" name="TirzepatideKit" value="Tirzepatide Starter Kit $120"> Order</label>
+      </summary>
+      <div class="mt-3 text-sm text-zinc-300">
+        A 30&nbsp;mg Tirzepatide pre-filled pen cartridge (GLP-1/GIP dual agonist) for weight management research. Helps regulate blood sugar and appetite. This cutting-edge peptide promotes steady, sustained weight loss with convenient dosing. 
+        <br><br>
+        <em>Options:</em><br>
+        <label class="block ml-4">
+          <input type="checkbox" name="TirzepatideKit_second" value="Add 2nd Tirzepatide cartridge $40"> Add a second 3mL cartridge for +$40 
+        </label>
+        <label class="block ml-4 mt-1">
+          Pen Color: 
+          <select name="TirzepatideKit_color" class="bg-zinc-800 border border-zinc-700 rounded-md px-2 py-1">
+            <option value="Blue">🔵 Blue</option>
+            <option value="Pink">🎀 Pink</option>
+          </select>
+        </label>
+        <p class="text-xs text-zinc-400 mt-2">
+          (Unmixed vial option also available separately for long-term storage.)
+        </p>
+      </div>
+    </details>
+    <!-- Individual Products Section -->
+    <h3 class="text-xl font-semibold mt-8 mb-3 serif">📦 Individual Research Products</h3>
+    <p class="text-xs text-zinc-400 mb-2">Select any additional single vials or products:</p>
+
+    <!-- Peptide Vials -->
+    <div class="mb-4">
+      <h4 class="font-medium text-zinc-200">Peptide Hormones & Blends:</h4>
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="Glow70_vial" value="GLOW70 Blend (BPC157+TB500+GHKCu) $65">
+        <span class="text-sm text-zinc-300">
+          💎 <strong>GLOW70 Recovery Blend</strong> (BPC-157+TB-500+GHK-Cu) – $65 &nbsp;
+          <small class="text-zinc-400">(10mg each BPC/TB500, 1mg GHK-Cu; unmixed lyophilized vial)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Supports healing, collagen production, and anti-inflammation (vial only, requires reconstitution).</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="Tirzepatide_vial" value="Tirzepatide 30mg Vial $65">
+        <span class="text-sm text-zinc-300">
+          🔥 <strong>Tirzepatide</strong> – 30mg vial – $65 
+          <small class="text-zinc-400">(GLP-1 analog for weight management, unmixed powder)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Regulates blood sugar and appetite; promotes steady weight loss over time (lyophilized for stability).</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="Tesamorelin" value="Tesamorelin 10mg Vial $30">
+        <span class="text-sm text-zinc-300">
+          💪 <strong>Tesamorelin</strong> – 10mg vial – $30 
+          <small class="text-zinc-400">(GHRH analog for fat loss & muscle support)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Clinically studied to reduce visceral fat and boost natural growth hormone (improves body composition and recovery).</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="Sermorelin" value="Sermorelin 5mg Vial $30">
+        <span class="text-sm text-zinc-300">
+          💪 <strong>Sermorelin</strong> – 5mg vial – $30 
+          <small class="text-zinc-400">(GHRH analog to stimulate GH release)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Boosts your body’s own GH production for improved recovery, sleep quality, and lean muscle gains.</p>
+    </div>
+
+    <!-- Nootropic & Wellness Peptides -->
+    <div class="mb-4">
+      <h4 class="font-medium text-zinc-200">Nootropics & Wellness Peptides:</h4>
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="Semax" value="Semax 10mg (IN) $35">
+        <span class="text-sm text-zinc-300">
+          🧠 <strong>Semax</strong> – 10mg vial (IN) – $35 
+          <small class="text-zinc-400">(Nootropic peptide for cognitive enhancement)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Improves mental clarity, focus, and memory; provides neuroprotective benefits (intranasal formulation).</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="Selank" value="Selank 10mg (IN) $35">
+        <span class="text-sm text-zinc-300">
+          🌿 <strong>Selank</strong> – 10mg vial (IN) – $35 
+          <small class="text-zinc-400">(Anxiolytic peptide for stress relief and mood)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Reduces anxiety and stabilizes mood without sedation; also may support immune function (intranasal formulation).</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="NAD+" value="NAD+ 500mg Vial $50">
+        <span class="text-sm text-zinc-300">
+          🌱 <strong>NAD+</strong> – 500mg vial – $50 
+          <small class="text-zinc-400">(Coenzyme for cellular energy & longevity)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Boosts mitochondrial function, improves metabolism, and supports DNA repair (anti-aging research staple).</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="MOTSc" value="MOTS-c 5mg Vial $35">
+        <span class="text-sm text-zinc-300">
+          ⚡ <strong>MOTS-c</strong> – 5mg vial – $35 
+          <small class="text-zinc-400">(Mitochondrial peptide for metabolism)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">“Exercise mimetic” peptide that enhances fat metabolism, insulin sensitivity, and endurance capacity.</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="Glutathione" value="Glutathione 1500mg Vial $35">
+        <span class="text-sm text-zinc-300">
+          🌿 <strong>Glutathione</strong> – 1500mg vial – $35 
+          <small class="text-zinc-400">(Master antioxidant for detox & immune)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Powerful antioxidant that supports liver detox, brightens skin, and bolsters immune health by combating oxidative stress.</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="DSIP" value="DSIP 5mg Vial $20">
+        <span class="text-sm text-zinc-300">
+          💤 <strong>DSIP</strong> – 5mg vial – $20 
+          <small class="text-zinc-400">(Delta Sleep-Inducing Peptide)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Promotes deeper, restorative sleep and helps reduce stress hormone levels; can aid recovery and natural GH release during sleep.</p>
+    </div>
+
+    <!-- Supportive Formulas & Others -->
+    <div class="mb-4">
+      <h4 class="font-medium text-zinc-200">Supportive Formulas & Other:</h4>
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="LipoB_vial" value="Lipo-B 10mL Vial $50">
+        <span class="text-sm text-zinc-300">
+          💥 <strong>Lipo-B</strong> – 10mL vial – $50 
+          <small class="text-zinc-400">(Lipotropic B-vitamin amino blend)</small>
+        </span>
+      </label>
+      <!-- (Ingredients already listed above; user likely understands from context) -->
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Boosts energy and metabolism with carnitine, arginine, B12, and more in a lipotropic blend.</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="TA1" value="Thymosin Alpha-1 10mg Vial $50">
+        <span class="text-sm text-zinc-300">
+          🛡 <strong>Thymosin Alpha-1</strong> – 10mg vial – $50 
+          <small class="text-zinc-400">(Immune-modulating peptide)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Enhances immune defense, helps fight infections, and promotes overall wellness and resilience.</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="BACwater10" value="Bacteriostatic Water 10mL $8">
+        <span class="text-sm text-zinc-300">
+          🔹 <strong>Bacteriostatic Water</strong> – 10mL vial – $8 
+          <small class="text-zinc-400">(For reconstitution of peptides)</small>
+        </span>
+      </label>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="BACwater30" value="Pfizer BAC Water 30mL $20">
+        <span class="text-sm text-zinc-300">
+          🔹 <strong>Pfizer BAC Water</strong> – 30mL vial – $20 
+          <small class="text-zinc-400">(Sterile bacteriostatic water)</small>
+        </span>
+      </label>
+      <!-- (No additional description needed for BAC water) -->
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="TestCyp" value="Testosterone Cypionate 250mg/mL $45">
+        <span class="text-sm text-zinc-300">
+          💪 <strong>Testosterone Cypionate</strong> – 250mg/mL, 10mL – $45 
+          <small class="text-zinc-400">(Injectable hormone, ***pre-order***)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Steady-release testosterone for research (supports muscle growth, energy, and mood). *Pre-order: ETA 9/2*</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="Tamoxifen" value="Tamoxifen 20mg x50 $30">
+        <span class="text-sm text-zinc-300">
+          ⚖️ <strong>Tamoxifen</strong> – 20mg tablets (50 count) – $30 
+          <small class="text-zinc-400">(SERM for post-cycle support)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-2">Helps restore natural testosterone production and reduce estrogen-related side effects during post-cycle recovery.</p>
+
+      <label class="flex items-start gap-2 mt-2">
+        <input type="checkbox" name="CockBomb" value="Cock Bomb (Tadalafil20/Sildenafil50) x20 $15">
+        <span class="text-sm text-zinc-300">
+          🔥 <strong>“Cock Bomb” Tablets</strong> – 20 tabs (Tadalafil 20mg + Sildenafil 50mg) – $15 
+          <small class="text-zinc-400">(ED performance blend)</small>
+        </span>
+      </label>
+      <p class="ml-6 text-xs text-zinc-400 mb-4">Combines Cialis and Viagra analogs for fast-acting and long-lasting performance. *COA available.*</p>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="mt-6 rounded-xl px-5 py-3 bg-blush-400 text-zinc-900 font-medium shadow-soft hover:bg-blush-300 transition">
+      Submit Order
+    </button>
+  </form>
+</section>
+<script>
+  const ack1 = document.getElementById('ack1');
+  const ack2 = document.getElementById('ack2');
+  const orderForm = document.getElementById('orderForm');
+  function updateFormState() {
+    if (ack1.checked && ack2.checked) {
+      orderForm.classList.remove('opacity-50', 'pointer-events-none');
+    } else {
+      orderForm.classList.add('opacity-50', 'pointer-events-none');
+    }
+  }
+  ack1.addEventListener('change', updateFormState);
+  ack2.addEventListener('change', updateFormState);
+</script>
